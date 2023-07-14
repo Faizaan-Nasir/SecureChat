@@ -26,3 +26,4 @@ a 12th Grader with PyQt5 and MySQL Connector Python modules. The use of this app
 - [ ] Chatting to be end to end encrypted.
 - [ ] Design reforms.
 - [ ] Shift to reliable sql server.
+- [ ] Convert to executable.
