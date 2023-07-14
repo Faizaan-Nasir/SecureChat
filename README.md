@@ -2,6 +2,8 @@
 ## About
 This is a python based application made with the purpose to create a somewhat secure chatting platform with end to end service. This application is made by 
 a 12th Grader with PyQt5 and MySQL Connector Python modules. The use of this application is pretty straight forward.
+
+
 ![image](https://github.com/Faizaan-Nasir/SecureChat/assets/82143161/aac60999-f685-451c-b7f0-f48da050d3fe)
 ## Instructions
 - Download the github repo as a zip file and ask the person you'd like to chat with to do the same.
@@ -12,6 +14,8 @@ a 12th Grader with PyQt5 and MySQL Connector Python modules. The use of this app
 - If you have chatted previously, enter the existing Room Key into the 'Room Key' field. If not, enter the Room Key generated at the bottom of your screen into the field mentioned previously.
 - Ask your chatting partner to enter the same 6 letter key that you entered into his/her 'Room Key' field.
 - You may now chat securely.
+
+
 ![image](https://github.com/Faizaan-Nasir/SecureChat/assets/82143161/d21c584c-fe9b-4473-bd4a-ea7a1b4df51d)
 ## Prerequisites
 - Python 3.0
