@@ -4,7 +4,7 @@ This is a python based application made with the purpose to create a somewhat se
 a 12th Grader with PyQt5 and MySQL Connector Python modules. The use of this application is pretty straight forward.
 
 
-![image](https://github.com/Faizaan-Nasir/SecureChat/assets/82143161/0761c560-1b81-44da-bc11-a28e667bd17d)
+![image](https://github.com/Faizaan-Nasir/SecureChat/assets/82143161/8e8feff4-f6ff-4f37-9b24-c0bb7c243b21)
 ## Instructions
 - Download the github repo as a zip file and ask the person you'd like to chat with to do the same.
 - Ensure that you have met all the requirements before hand. (scroll down to Prerequisites)
@@ -16,9 +16,7 @@ a 12th Grader with PyQt5 and MySQL Connector Python modules. The use of this app
 - You may now chat securely.
 
 
-![image](https://github.com/Faizaan-Nasir/SecureChat/assets/82143161/06bcf6ce-dece-4073-9f9a-3c0bcdb8f432)
-## Prerequisites
-- Python 3.0
+![image](https://github.com/Faizaan-Nasir/SecureChat/assets/82143161/70a31897-b61a-440f-92b9-c8f0f9751c1a)
 ## Future Goals 
 - [ ] Chatting to be end to end encrypted.
 - [x] Design reforms.
