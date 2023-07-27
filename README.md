@@ -21,6 +21,6 @@ a 12th Grader with PyQt5 and MySQL Connector Python modules. The use of this app
 - Python 3.0
 ## Future Goals 
 - [ ] Chatting to be end to end encrypted.
-- [ ] Design reforms.
+- [x] Design reforms.
 - [ ] Shift to reliable sql server.
 - [x] Convert to executable.
