@@ -18,7 +18,16 @@ a 12th Grader with PyQt5 and MySQL Connector Python modules. The use of this app
 
 ![image](https://github.com/Faizaan-Nasir/SecureChat/assets/82143161/70a31897-b61a-440f-92b9-c8f0f9751c1a)
 ## Future Goals 
-- [ ] Chatting to be end to end encrypted.
+- [x] Chatting to be encrypted.
 - [x] Design reforms.
 - [ ] Shift to reliable sql server.
 - [x] Convert to executable.
+
+
+## Version History
+- Version 0.9.1 (Beta):
+    - Changed the background to a different colour
+    - Added themes to enhance the aesthetics
+    - Made chatting encrypted: chats stored on database are encrypted
+- Version 0.8.1 (Initial Release Version):
+    - Released executable file for windows
