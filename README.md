@@ -31,3 +31,5 @@ a 12th Grader with PyQt5 and MySQL Connector Python modules. The use of this app
     - Made chatting encrypted: chats stored on database are encrypted
 - Version 0.8.1 (Initial Release Version):
     - Released executable file for windows
+
+## © 2023 SecureChat. All Rights Reserved.
