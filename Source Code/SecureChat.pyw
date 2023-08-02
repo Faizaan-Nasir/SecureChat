@@ -1,5 +1,3 @@
-# This is only the source code of the executable and alot of the sensitive information has been populated and hence hidden with placeholder
-
 import sys
 from PyQt5.QtWidgets import QApplication, QLabel, QWidget, QPushButton, QFormLayout, QLineEdit, QScrollArea, QVBoxLayout, QHBoxLayout
 from PyQt5 import QtCore
@@ -7,9 +5,9 @@ from PyQt5 import QtGui
 from PyQt5.QtCore import QTimer
 import random
 import mysql.connector as sql
-import time
+import math
 
-con=sql.connect(host='SQL HOSTING SERVER',user='THE USERNAME',password='THE PASSWORD',database='THE DATABASE')
+con=sql.connect(host='MORPHED',user='MORPHED',password='MORPHED',database='MORPHED')
 
 cur=con.cursor()
 app = QApplication([])
@@ -53,7 +51,7 @@ def joinroom():
         cur.execute('select * from {} where reciever="{}";'.format(table_name,roomId.text()))
         l=cur.fetchall()
         s1='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
-        s2='SUBSTITUTION KEY'
+        s2='MORPHED'
         decrypt=''
         for j in l[-1][2]:
             if j.isalpha():
@@ -61,31 +59,41 @@ def joinroom():
                 decrypt+=s1[x]
             else:
                 decrypt+=j
-        y=QLabel('<div style="color:white;font-size:20px;width:780px">'+decrypt+'</div>')
-        y.setWordWrap(True)
-        y.setFixedHeight(50)
-         
+        y=QLabel('<p style="color:white;font-size:20px;width:780px">'+decrypt+'</p>')
         y.setStyleSheet('border-radius:10px;background:#005c4b;padding:10px;font-weight:500')
         y.setAlignment(QtCore.Qt.AlignRight)
+        y.setWordWrap(True)
+        count=math.ceil(len(decrypt)/60)
+        y.setFixedHeight(30*count+20)
         chats.addWidget(y)
         chatarea.show()
         
     def sendmes():
         s1='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
-        s2='SUBSTITUTION KEY'
+        s2='MORPHED'
+        alert1=QLabel('''<h2 style='color:#F04E4E;'> Empty Message!! </h2>''',parent=window)
+        alert1.setStyleSheet('background:transparent')
+        alert1.move(20,10)
         text=message.text()
-        encrypt=''
-        for i in text:
-            if i.isalpha():
-                x=s1.index(i)
-                encrypt+=s2[x]
-            else:
-                encrypt+=i
-        query='insert into {} values("{}","{}","{}")'.format(table_name,code,roomId.text(),encrypt)
-        li.append(encrypt)
-        cur.execute(query)
-        con.commit()
-        display()
+        if text.strip()=='':
+            alert1.show()
+            def hidealert():
+                alert1.hide()
+            QTimer.singleShot(3000,hidealert)
+        else:
+            encrypt=''
+            for i in text:
+                if i.isalpha():
+                    x=s1.index(i)
+                    encrypt+=s2[x]
+                else:
+                    encrypt+=i
+            query='insert into {} values("{}","{}","{}")'.format(table_name,code,roomId.text(),encrypt)
+            li.append(encrypt)
+            cur.execute(query)
+            con.commit()
+            display()
+            message.clear()
     
     def gobackF():
         chatarea.hide()
@@ -138,16 +146,16 @@ def joinroom():
         chatarea.move(300,250)
         chatarea.resize(800,300)
         chatarea.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
-        chatarea.setWidgetResizable(True)
         chatarea.setStyleSheet('border:none;background:transparent;')
+        chatarea.setWidgetResizable(True)
         theme.hide()
         
-        chats=QVBoxLayout()
+        chats=QVBoxLayout(window)
         global li
         li=[]
         cur.execute('select * from {} where (reciever="{}" and sender="{}") or (reciever="{}" and sender="{}");'.format(table_name,roomId.text(),code,code,roomId.text()))
         s1='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
-        s2='SUBSTITUTION KEY'
+        s2='MORPHED'
         for k in cur.fetchall():
             if k[1]==code:
                 decrypt=''
@@ -157,9 +165,10 @@ def joinroom():
                         decrypt+=s1[x]
                     else:
                         decrypt+=j
-                x=QLabel('<div style="color:white;font-size:20px;">'+decrypt+'</div>')
+                x=QLabel('<p style="color:white;font-size:20px;">'+decrypt+'</p>')
                 x.setWordWrap(True)
-                x.setFixedHeight(50)
+                count=math.ceil(len(decrypt)/60)
+                x.setFixedHeight(30*count+20)
                 x.setStyleSheet('border-radius:10px;background:#202c33;padding:10px;font-weight:500')
                 chats.addWidget(x)
             elif k[0]==code:
@@ -170,9 +179,10 @@ def joinroom():
                         decrypt+=s1[x]
                     else:
                         decrypt+=j
-                y=QLabel('<div style="color:white;font-size:20px;">'+decrypt+'</div>')
+                y=QLabel('<p style="color:white;font-size:20px;">'+decrypt+'</p>')
                 y.setWordWrap(True)
-                y.setFixedHeight(50)
+                count=math.ceil(len(decrypt)/60)
+                y.setFixedHeight(30*count+20)
                 y.setStyleSheet('border-radius:10px;background:#005c4b;padding:10px;font-weight:500')
                 y.setAlignment(QtCore.Qt.AlignRight)
                 chats.addWidget(y)
@@ -182,11 +192,12 @@ def joinroom():
         chatarea.setWidget(new)
         chatarea.show()
         
-        message=QLineEdit('Enter your message here...',parent=window)
+        message=QLineEdit(parent=window)
         message.setFixedWidth(600)
         message.setStyleSheet('font-size:25px;border:none;background:white;border-radius:10px;padding:10px')
         message.move(311,590)
         message.show()
+        message.setPlaceholderText('Enter your message here')
         
         global send
         send=QPushButton('Send',parent=window)
@@ -217,7 +228,7 @@ def joinroom():
                 if m[2] not in li:
                     li.append(m[2])
                     s1='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
-                    s2='SUBSTITUTION KEY'
+                    s2='MORPHED'
                     decrypt=''
                     for j in m[2]:
                         if j.isalpha():
@@ -225,9 +236,10 @@ def joinroom():
                             decrypt+=s1[x]
                         else:
                             decrypt+=j
-                    y=QLabel('<div style="color:white;font-size:20px;width:550px">'+decrypt+'</div>')
-                    y.setFixedHeight(50)
+                    y=QLabel('<p style="color:white;font-size:20px;width:550px">'+decrypt+'</p>')
                     y.setWordWrap(True)
+                    count=math.ceil(len(decrypt)/60)
+                    y.setFixedHeight(30*count+20)
                     y.setStyleSheet('border-radius:10px;background:#202c33;padding:10px;font-weight:500')
                     y.setAlignment(QtCore.Qt.AlignLeft)
                     chats.addWidget(y)
@@ -336,12 +348,14 @@ textor=QLabel('''
 textor.setStyleSheet('color:white; font-size:30px;background:transparent')
 textor.move(84,240)
 
-roomId=QLineEdit('Enter Reciever ID',parent=window)
+roomId=QLineEdit(parent=window)
+roomId.setPlaceholderText('Enter Reciever ID')
 roomId.setStyleSheet('border:none; background: white; border-radius:10px;font-size:25px;font-weight:500; padding:10px;border:none')
 roomId.setFixedHeight(50)
 roomId.setFixedWidth(400)
 roomId.move(84,350)
-roomKey=QLineEdit('Enter Room Key',parent=window)
+roomKey=QLineEdit(parent=window)
+roomKey.setPlaceholderText('Enter Room Key')
 roomKey.setStyleSheet('border:none; background: white; border-radius:10px;font-size:25px;font-weight:500; padding:10px;border:none')
 roomKey.setFixedHeight(50)
 roomKey.setFixedWidth(400)
