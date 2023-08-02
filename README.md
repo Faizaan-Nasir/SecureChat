@@ -6,7 +6,8 @@ a 12th Grader with PyQt5 and MySQL Connector Python modules. The use of this app
 
 ![image](https://github.com/Faizaan-Nasir/SecureChat/assets/82143161/8e8feff4-f6ff-4f37-9b24-c0bb7c243b21)
 ## Instructions
-- Download the github repo as a zip file and ask the person you'd like to chat with to do the same.
+- Go to the 'Releases' section of this page (most likely on the right most part of the page) and download the latest release (instructions for the same mentioned there).
+- Ask your friend/partner to do the same.
 - Run the 'SecureChat (version).exe' file.
 - You will see an ID generated at the top of the application, give this ID to the person you'd like to chat with.
 - Ask the person you'd like to chat with for his/her ID and enter this into the 'Receiver ID' field.
