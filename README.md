@@ -33,6 +33,7 @@ a 12th Grader with PyQt5 and MySQL Connector Python modules. The use of this app
 - [ ] Shift to reliable sql server.
 - [ ] Sending images/files.
 - [ ] Sending emojis.
+- [ ] Create and chat in groups.
 
 ## Version History
 - Version 1.0.1:
