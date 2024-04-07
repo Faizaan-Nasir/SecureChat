@@ -8,8 +8,9 @@ a 12th Grader with PyQt5 and MySQL Connector Python modules. The use of this app
 ## Instructions
 - Go to the 'Releases' section of this page (most likely on the right most part of the page) and download the latest release (instructions for the same mentioned there).
 - Ask your friend/partner to do the same.
-- Run the 'SecureChat (version).exe' file.
-- You will see an ID generated at the top of the application, give this ID to the person you'd like to chat with.
+- Run the 'SecureChat.exe' file.
+- You will be prompted to enter your alias/name.
+- Give this name to the person you'd like to chat with.
 - Ask the person you'd like to chat with for his/her ID and enter this into the 'Receiver ID' field.
 - If you have chatted previously, enter the existing Room Key into the 'Room Key' field. If not, enter the Room Key generated at the bottom of your screen into the field mentioned previously.
 - Ask your chatting partner to enter the same 7 character key that you entered, into his/her 'Room Key' field.
@@ -54,4 +55,4 @@ a 12th Grader with PyQt5 and MySQL Connector Python modules. The use of this app
 - Version 0.8.1 (Initial Release Version):
     - Released executable file for windows
 
-**© 2023 SecureChat. All Rights Reserved.**
+**© 2024 SecureChat. All Rights Reserved.**
