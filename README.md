@@ -12,7 +12,7 @@ a 12th Grader with PyQt5 and MySQL Connector Python modules. The use of this app
 - You will see an ID generated at the top of the application, give this ID to the person you'd like to chat with.
 - Ask the person you'd like to chat with for his/her ID and enter this into the 'Receiver ID' field.
 - If you have chatted previously, enter the existing Room Key into the 'Room Key' field. If not, enter the Room Key generated at the bottom of your screen into the field mentioned previously.
-- Ask your chatting partner to enter the same 6 letter key that you entered, into his/her 'Room Key' field.
+- Ask your chatting partner to enter the same 7 character key that you entered, into his/her 'Room Key' field.
 - You may now chat securely.
 - **Please delete your conversations as soon as you're done chatting.**
 
@@ -30,12 +30,19 @@ a 12th Grader with PyQt5 and MySQL Connector Python modules. The use of this app
 - [x] Chatting to be encrypted.
 - [x] Design reforms.
 - [x] Convert to executable.
-- [ ] Shift to reliable sql server.
+- [x] Shift to reliable SQL server.
+- [ ] Improving UX.
 - [ ] Sending images/files.
 - [ ] Sending emojis.
 - [ ] Create and chat in groups.
 
 ## Version History
+- Version 1.1.1:
+    - Enhanced User Experience (enter key sends message)
+    - Added option to let user give his own name
+    - Shifted to a reliable SQL server
+    - Improved connection error handling
+    - Improved security (changed encryption algorithm)
 - Version 1.0.1:
     - Added placeholders in all textual input boxes
     - Messages can no longer be empty

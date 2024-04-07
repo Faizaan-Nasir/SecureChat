@@ -1,3 +1,3 @@
-This is only the source code of the application you see, some parts of the code have been morphed with placeholder as those parts are sensitive. I hope you find this code interesting.
+This is only the source code of the application you see, sensitive details have been replaced with the word MORPHED. I hope you find this code interesting.
 
 If you've downloaded this application to use it then this part of the folder is not meant for you... kindly download the release zip file on the github page: https://github.com/Faizaan-Nasir/SecureChat
