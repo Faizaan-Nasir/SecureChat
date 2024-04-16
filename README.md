@@ -3,6 +3,7 @@
 This is a python based application made with the purpose to create a somewhat secure chatting platform with end to end service. This application is made by 
 a 12th Grader with PyQt5 and MySQL Connector Python modules. The use of this application is pretty straight forward.
 
+## NOTE: The current version of the application triggers Avast to conduct a scan. This seems to be a licensing issue. You may have to restart the application 2 to 3 times before it functions properly.
 
 ![image](https://github.com/Faizaan-Nasir/SecureChat/assets/82143161/8e8feff4-f6ff-4f37-9b24-c0bb7c243b21)
 ## Instructions
